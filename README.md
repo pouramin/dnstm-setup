@@ -350,13 +350,13 @@ Each topic gives deep explanations of how things work, why each step is needed, 
 
 ---
 
-## 📱 Client Setup (SlipNet)
+## 📱 Client Apps
 
-**SlipNet** is the Android VPN client that connects through your DNS tunnels.
+### 🤖 Android — SlipNet
+
+**SlipNet** supports both Slipstream and DNSTT tunnels.
 
 📥 **Download:** https://github.com/anonvector/SlipNet/releases
-
-### ⚙️ Configuration
 
 | Setting | Value |
 |---|---|
@@ -364,6 +364,28 @@ Each topic gives deep explanations of how things work, why each step is needed, 
 | 🔍 **DNS Resolver** | Any public resolver (see below) |
 | 🔄 **Transport** | Slipstream (for t2/s2) or DNSTT (for d2) |
 | 🔑 **DNSTT Public Key** | The key shown in Step 7 (only for d2 tunnel) |
+
+### 🍎 iOS — HTTP Injector
+
+**HTTP Injector** supports DNSTT tunnels (the `d2` subdomain). Slipstream is not supported on iOS.
+
+📥 **Download:** [App Store](https://apps.apple.com/us/app/http-injector/id1659992827)
+
+| Setting | Value |
+|---|---|
+| 🔄 **Protocol** | DNS Tunnel (DNSTT) |
+| 🌐 **Domain** | `d2.yourdomain.com` |
+| 🔍 **DNS Resolver** | Any public resolver (see below) |
+| 🔑 **DNSTT Public Key** | The key shown in Step 7 |
+
+> ⚠️ iOS users can only use the **DNSTT tunnel** (`d2` subdomain). Slipstream tunnels (`t2`/`s2`) are Android-only via SlipNet.
+
+### 📊 Platform Support
+
+| Platform | App | Slipstream (t2/s2) | DNSTT (d2) |
+|---|---|---|---|
+| 🤖 Android | SlipNet | ✅ | ✅ |
+| 🍎 iOS | HTTP Injector | ❌ | ✅ |
 
 ### 🌍 Recommended DNS Resolvers
 
@@ -712,13 +734,13 @@ sudo bash dnstm-setup.sh
 
 ---
 
-## 📱 تنظیم اپلیکیشن (SlipNet)
+## 📱 اپلیکیشن‌های کلاینت
 
-**SlipNet** اپلیکیشن VPN اندروید برای اتصال از طریق تانل DNS است.
+### 🤖 اندروید — SlipNet
+
+**SlipNet** از هر دو پروتکل Slipstream و DNSTT پشتیبانی می‌کند.
 
 📥 **دانلود:** https://github.com/anonvector/SlipNet/releases
-
-### ⚙️ تنظیمات در SlipNet
 
 | تنظیم | مقدار |
 |---|---|
@@ -726,6 +748,28 @@ sudo bash dnstm-setup.sh
 | 🔍 **DNS Resolver** | یکی از resolverهای عمومی (جدول زیر) |
 | 🔄 **Transport** | Slipstream (برای t2/s2) یا DNSTT (برای d2) |
 | 🔑 **DNSTT Public Key** | کلید نمایش داده شده در مرحله ۷ (فقط برای تانل d2) |
+
+### 🍎 iOS — HTTP Injector
+
+**HTTP Injector** فقط از تانل DNSTT (ساب‌دامین `d2`) پشتیبانی می‌کند. Slipstream روی iOS پشتیبانی نمی‌شود.
+
+📥 **دانلود:** [App Store](https://apps.apple.com/us/app/http-injector/id1659992827)
+
+| تنظیم | مقدار |
+|---|---|
+| 🔄 **Protocol** | DNS Tunnel (DNSTT) |
+| 🌐 **Domain** | `d2.yourdomain.com` |
+| 🔍 **DNS Resolver** | یکی از resolverهای عمومی (جدول زیر) |
+| 🔑 **DNSTT Public Key** | کلید نمایش داده شده در مرحله ۷ |
+
+> ⚠️ کاربران iOS فقط می‌توانند از **تانل DNSTT** (ساب‌دامین `d2`) استفاده کنند. تانل‌های Slipstream (`t2`/`s2`) فقط روی اندروید با SlipNet کار می‌کنند.
+
+### 📊 پشتیبانی پلتفرم‌ها
+
+| پلتفرم | اپلیکیشن | Slipstream (t2/s2) | DNSTT (d2) |
+|---|---|---|---|
+| 🤖 اندروید | SlipNet | ✅ | ✅ |
+| 🍎 iOS | HTTP Injector | ❌ | ✅ |
 
 ### 🌍 DNS Resolverهای پیشنهادی
 
