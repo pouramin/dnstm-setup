@@ -141,7 +141,7 @@ Before running the script, you need:
 SSH into your server as root, then:
 
 ```bash
-curl -fsSL -o dnstm-setup.sh https://raw.githubusercontent.com/SamNet-dev/dnstm-setup/main/dnstm-setup.sh
+curl -fsSL -o dnstm-setup.sh https://raw.githubusercontent.com/SamNet-dev/dnstm-setup/master/dnstm-setup.sh
 sudo bash dnstm-setup.sh
 ```
 
@@ -659,7 +659,7 @@ Made By **SamNet Technologies** — Saman
 </div>
 
 ```bash
-curl -fsSL -o dnstm-setup.sh https://raw.githubusercontent.com/SamNet-dev/dnstm-setup/main/dnstm-setup.sh
+curl -fsSL -o dnstm-setup.sh https://raw.githubusercontent.com/SamNet-dev/dnstm-setup/master/dnstm-setup.sh
 sudo bash dnstm-setup.sh
 ```
 
