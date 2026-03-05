@@ -445,7 +445,9 @@ dnstm tunnel start --tag slip1
 dnstm router stop
 dnstm router start
 
-# 🧪 Test the SOCKS proxy locally (check port with: ss -tlnp | grep microsocks)
+# 🧪 Test the SOCKS proxy locally
+# Use the command below to find your specific MICROSOCKS_PORT:
+# ps aux | grep microsocks
 curl --socks5 127.0.0.1:<MICROSOCKS_PORT> https://api.ipify.org
 ```
 
@@ -528,11 +530,16 @@ dnstm tunnel start --tag slip1
 <summary><b>🔴 SOCKS proxy not responding</b></summary>
 
 ```bash
-# Check if microsocks is running
-systemctl status microsocks
+# Port Discrepancy: The dnstm installer assigns a dynamic port to microsocks. To find your active port, run:
+ps aux | grep microsocks
 
-# Restart it
+# Connection Refused: Ensure you are using the port found above. If you see Connection refused, the service might be down.
+
+# Restart Service:
 systemctl restart microsocks
+
+# Verify Status:
+systemctl status microsocks
 
 # Test locally (check port with: ss -tlnp | grep microsocks)
 curl --socks5 127.0.0.1:<MICROSOCKS_PORT> https://api.ipify.org
@@ -872,7 +879,24 @@ chattr -i /etc/resolv.conf 2>/dev/null; rm -f /etc/resolv.conf
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
 chattr +i /etc/resolv.conf
 ```
+<div dir="rtl">
 
+### 🔴 مشکلات پروکسی SOCKS (microsocks)
+
+</div>
+
+```bash
+# تغییر پورت: اسکریپت نصب، پورتی تصادفی به microsocks اختصاص می‌دهد. برای یافتن پورت صحیح، دستور زیر را اجرا کنید:
+ps aux | grep microsocks
+
+# خطای Connection Refused: مطمئن شوید از پورت پیدا شده در مرحله قبل استفاده می‌کنید.
+# راه‌اندازی مجدد:
+systemctl restart microsocks
+
+# بررسی وضعیت پاسخدهی socks
+curl --socks5 127.0.0.1:<MICROSOCKS_PORT> https://api.ipify.org
+
+```
 <div dir="rtl">
 
 ### 🔴 تانل‌ها شروع نمی‌شوند
